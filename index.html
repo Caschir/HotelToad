@@ -12,11 +12,20 @@
     </head>
     <body>
         <!-- Main Webpage top welcome images in a div -->
-        <div class="logo">
-            <img src="images/welcome_toad.png" alt="welcome_toad">
-            <img src="images/logo.png" alt="logo">
-            <img src="images/toad_bro.png" alt="toad_bro">
-        </div>
+        <div class="header">
+            <div class="logo">
+              <img src="images/welcome_toad.png" alt="welcome_toad">
+              <img src="images/logo1.png" alt="logo">
+              <img src="images/toad_bro.png" alt="toad_bro">
+            </div>
+            <ul class="tabs">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#Rooms">Rooms</a></li>
+              <li><a href="#Amenities">Amenities</a></li>
+            </ul>
+          </div>
+          
+       
         <!-- Div element containing the booking menu and all booking elements-->
         <div class="booking">
             <img src="images/hotel.png" alt="hotel">
@@ -46,6 +55,17 @@
                     <label for="checkout-date"></label>
                     <input type="text" id="checkout-date" placeholder="Check Out Date" name="checkout" onfocus="this.type='date'" onblur="this.type='text'" required>
                 </div>
+
+                <div class="booking_elements">
+                    <label for="room-type"></label>
+                    <select id="room-type" name="room-type" required>
+                        <option value="">Select Room Type</option>
+                        <option value="Classic King">King Room</option>
+                        <option value="Classic Queen">Queen Room</option>
+                        <option value="Double Twin">Twin Room</option>
+                      </select>
+                </div>
+
                 <div class="booking_elements">
                     <label for="message"></label>
                     <textarea id="message" placeholder="Anything else? Let us know here!" name="message" required></textarea>

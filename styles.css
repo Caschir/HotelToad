@@ -1,6 +1,6 @@
 
 body {
-    background-color: #0073ff;
+    background-color: #ffffff;
 }
 
 /* Styles for label element */
@@ -16,14 +16,54 @@ textarea {
 }
 
 /* Styles for logo div and images within div */
+
 .logo {
     display: flex;
-    justify-content: center;
-}
-
-.logo > img {
-    max-height: 200px;
-}
+    align-items: center; 
+    border: 5px solid #000000; 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 185px;
+  }
+  
+  .logo img {
+    max-height: 50px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .tabs {
+    position: relative; right: 1400px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .tabs li {
+    margin-right: 10px;
+  }
+  
+  .tabs li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  
+  .tabs li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  
 
 /* Styles for div elements with class booking and the images within */
 .booking {
@@ -81,3 +121,17 @@ textarea {
     position: absolute;
     bottom: 5px;
 }
+
+#room-type {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #0073ff; 
+    border-radius: 5px;
+    background-color: rgba(240,248,255,0.6);
+    margin-right: 220px;
+  }
+  
+  #room-type:focus {
+    border-color: #ff0000; 
+  }
