@@ -1,12 +1,58 @@
-</html>
-<!doctype html>
+
+<!-- index.html -->
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel</title>
-  </head>
-  <body>
-    <script src="index.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <!-- So Website will scale well on mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- link to CSS stylesheet -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <!-- Webpage Tab Title-->
+        <title>Hotel Toad!</title>
+    </head>
+    <body>
+        <!-- Main Webpage welcome images -->
+        <div class="logo">
+            <img src="images/welcome_toad.png" alt="welcome_toad">
+            <img src="images/logo.png" alt="logo">
+            <img src="images/toad_bro.png" alt="toad_bro">
+        </div>
+        <div class="booking">
+            <img src="images/hotel.png" alt="hotel">
+            <form id="booking_menu">
+                <img src="images/pipe.png" alt="pipe">
+                <div class="booking_elements">
+                    <label for="name"></label>
+                    <input type="text" id="name" placeholder="Full Name" name="visitor_name" required>
+                </div>
+                <div class="booking_elements">
+                    <label for="email"></label>
+                    <input type="email" id="email" placeholder="Email Address" name="visitor_email" required>
+                </div>
+                <div class="booking_elements">
+                    <label for="adult"></label>
+                    <input type="number" id="adult" placeholder="Number of Adults" name="total_adults" min="1" required>
+                </div>
+                <div class="booking_elements">
+                    <label for="child"></label>
+                    <input type="number" id="child" placeholder="Number of Children" name="total_children" required>
+                </div>
+                <div class="booking_elements">
+                    <label for="checkin-date"></label>
+                    <input type="date" id="checkin-date" name="checkin" required>
+                </div>
+                <div class="booking_elements">
+                    <label for="checkout-date"></label>
+                    <input type="date" id="checkout-date" name="checkout" required>
+                </div>
+                <div class="booking_elements">
+                    <label for="message"></label>
+                    <textarea id="message" placeholder="Anything else? Let us know here!" name="message" required></textarea>
+                </div>
+                <button id="submit_button" type="submit">Check For Rooms</button>
+            </form>
+        </div>
+    </body>
 </html>

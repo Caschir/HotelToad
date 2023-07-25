@@ -1,0 +1,83 @@
+
+body {
+    background-color: #0073ff;
+}
+
+/* Styles for label element */
+label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+/* Styles for textarea element */
+textarea {
+    height: 150px;
+    width: 300px
+}
+
+/* Styles for logo div and images within div */
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo > img {
+    max-height: 200px;
+}
+
+/* Styles for div elements with class booking and the images within */
+.booking {
+    margin-top: 25px;
+    position: relative;
+}
+
+.booking img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles for div element with id bookingmenu */
+#booking_menu {
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid #0073ff;
+    font-size: 24px;
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    border-radius: 20px;
+    background-color: rgba(240,248,255,0.5);
+    padding: 50px;
+    margin-right: 20px;
+    justify-content: space-around;
+}
+
+/* Styles for type input of div elements with class booking_element */
+.booking_elements input{
+    background-color: rgba(240,248,255,0.3);
+    border: 2px solid #0073ff;
+    font-size: 18px;
+    display: inline-block;
+    width: 175px;
+    height: 50px;
+}
+
+/* Styles for type textarea of div elements with class booking_element */
+.booking_elements textarea{
+    background-color: rgba(240,248,255,0.6);
+    border: 2px solid #0073ff;
+    font-size: 18px;
+    display: inline-block;
+    width: 355px;
+    height: 200px;
+}
+
+/* Styles for the submit button */
+#submit_button {
+    font-size: 24px;
+    color: khaki;
+    background-color: rgba(30,144,255, 0.6);
+    position: absolute;
+    bottom: 5px;
+}
