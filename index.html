@@ -5,20 +5,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <!-- So Website will scale well on mobile -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- link to CSS stylesheet -->
         <link rel="stylesheet" type="text/css" href="styles.css">
         <!-- Webpage Tab Title-->
         <title>Hotel Toad!</title>
     </head>
     <body>
-        <!-- Main Webpage welcome images -->
+        <!-- Main Webpage top welcome images in a div -->
         <div class="logo">
             <img src="images/welcome_toad.png" alt="welcome_toad">
             <img src="images/logo.png" alt="logo">
             <img src="images/toad_bro.png" alt="toad_bro">
         </div>
+        <!-- Div element containing the booking menu and all booking elements-->
         <div class="booking">
             <img src="images/hotel.png" alt="hotel">
             <form id="booking_menu">
@@ -41,11 +40,11 @@
                 </div>
                 <div class="booking_elements">
                     <label for="checkin-date"></label>
-                    <input type="date" id="checkin-date" name="checkin" required>
+                    <input type="text" id="checkin-date" placeholder="Check In Date" name="checkin" onfocus="this.type='date'" onblur="this.type='text'" required>
                 </div>
                 <div class="booking_elements">
                     <label for="checkout-date"></label>
-                    <input type="date" id="checkout-date" name="checkout" required>
+                    <input type="text" id="checkout-date" placeholder="Check Out Date" name="checkout" onfocus="this.type='date'" onblur="this.type='text'" required>
                 </div>
                 <div class="booking_elements">
                     <label for="message"></label>
