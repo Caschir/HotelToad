@@ -1,7 +1,6 @@
-# HotelToad
-Online Hotel Reservation Software
+# Hotel Reservation Software
 
-Table of Contents
+## Table of Contents
 
 Overview
 Features
