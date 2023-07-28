@@ -69,13 +69,13 @@ textarea {
   }
 
   .tabs {
-    position: relative; right: 1400px;
     list-style: none;
-    margin: 0;
+    margin: 5%;
     padding: 0;
     display: flex;
+    margin-right: auto; 
   }
-  
+
   .tabs li {
     margin-right: 10px;
   }
