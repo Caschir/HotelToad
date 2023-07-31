@@ -2,16 +2,14 @@
 body {
   margin: 0;
   padding: 0;
+  position: relative;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  height: 250px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-body {
-  position: relative;
-  padding-bottom: 20px; 
-  background-color: rgb(255, 255, 255); 
-  height: 250px;
-  padding-left: 0; 
-  padding-right: 0; 
-}
 
 /* Styles for label element */
 label {
@@ -93,7 +91,81 @@ textarea {
     color: #333;
   }
   
+  /*Amenities tab styling*/
+
+  .hAmenitiesPic{ 
+    width: 100%;
+    overflow: hidden;
+    height: 110%;
+    display: block;
+    opacity: 0.8;
+  }
+  .tabTitle {
+    font-family:'Berling SB Roman', Times, serif ;
+    font-style: italic;
+    font-size: xx-large;
+    position: absolute;
+    top: 80%;
+    left: 49%;
+    color: rgb(30, 22, 28);
+  }
+
+  .aAmenities{
+    position: relative;
+    
+  }
+  .P1 {
+    margin: 7%;
+    width: 40%;
+  }
+  .P2 {
+    margin: 7%;
+    margin-left: 44%;
+    width: 40%;
+  }
+ 
   
+  .TextT1 {
+    line-height: 0.6;
+    opacity: 0.6;
+    font-size: x-large;
+    font-family:'Berling SB Roman', Times, serif ;
+    color: rgb(13, 48, 18);
+    position: absolute;
+    right: 28%;
+    top: 25%;
+  }
+  .TextT2 {
+    line-height: 0.6;
+    opacity: 0.6;
+    font-size: x-large;
+    font-family:'Berling SB Roman', Times, serif ;
+    color: rgb(13, 48, 18);
+    position: absolute;
+    right: 68%;
+    top: 25%;
+  }
+
+
+  .Text1{
+    letter-spacing:1px;
+    font-size: large;
+    position: absolute;
+    right: 21%;
+    top: 47%;
+  }
+
+  .Text2{
+    letter-spacing:1px;
+    font-size: large;
+    position: absolute;
+    right: 61%;
+    top: 47%;
+  }
+
+
+/* end amenities tab*/
+
 
 /* Styles for div elements with class booking and the images within */
 .booking {
