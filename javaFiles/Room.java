@@ -1,17 +1,21 @@
 package Hotel_Reservation.src;
 
 public class Room {
-    public int roomNumber;
-    public int floorNumber;
+   public int roomNumber;
+
     private String roomType;
-    private String availability;
+    private boolean availability;
+    private int price ; 
 
-    void isAvailability(int roomNumber, int floorNumber, String roomType, String availability){
+    void room(int roomNumber,  String roomType, boolean availability , int price){
 
-        this.roomNumber = roomNumber;
-        this.floorNumber = floorNumber;
-        this.roomType = roomType;
-        this.availability = availability;
+        this.roomNumber=roomNumber;
+        
+        this.roomType=roomType;
+        this.availability=availability;
+
+       
         
     }
+}
 }
