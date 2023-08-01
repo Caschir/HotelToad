@@ -8,10 +8,10 @@ public class Room {
 
     void isAvailability(int roomNumber, int floorNumber, String roomType, String availability){
 
-        this.roomNumber=roomNumber;
-        this.floorNumber=floorNumber;
-        this.roomType=roomType;
-        this.availability=availability;
+        this.roomNumber = roomNumber;
+        this.floorNumber = floorNumber;
+        this.roomType = roomType;
+        this.availability = availability;
         
     }
 }
