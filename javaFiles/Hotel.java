@@ -1,23 +1,24 @@
 package Hotel_Reservation.src;
 
+// Java Hotel class
 public class Hotel {
-    private Room [] rooms;
 
-    public Hotel(Room[] rooms2) {
-        this.rooms = rooms2;
-        
+    // Hotel class attributes
+    private Room[] rooms;
+
+    // Hotel class constructor
+    public Hotel(Room[] rooms){
+        this.rooms = rooms;
     }
 
-    public void roomInfo(int roomInventory){
-        this.roomInventory=roomInventory;
+    
+    public void roomInfo(){
 
     }
-    void reserveRoom(int roomInventory){
-        this.roomInventory=roomInventory;
+    public void reserveRoom(){
 
     }
-    void cancelRoom(int roomInventory){
-        this.roomInventory=roomInventory;
-    }
+    public void cancelRoom(){
 
+    }
 }
