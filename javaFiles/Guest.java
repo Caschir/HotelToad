@@ -8,6 +8,8 @@ public class Guest {
     private String lastName;
     private String email;
 
+
+
     // Guest class constructor
     public Guest(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -28,6 +30,8 @@ public class Guest {
         return email;
     }
 
+
+    // Guest method for printing out Guest data
     public String printGuestInfo(){
         return "\nFirst Name: "+firstName+"\nLast Name: "+lastName+"\nEmail: "+email+"\n";
     }

@@ -11,6 +11,7 @@ public class Reservation {
     public String roomType;
     public String message;
 
+
     // Reservation class constructor
     public Reservation(int numAdults, int numChildren, String checkIn, String checkOut, String roomType,String message){
         this.numAdults = numAdults;
@@ -44,6 +45,12 @@ public class Reservation {
 
     public String getMessage(){
         return roomType;
+    }
+
+    // Reservation method for printing out Reservation data
+    public String printReservationInfo(){
+        return "\nNumber of Adults: "+numAdults+"\nNumber of Children: "+numChildren+"\nCheck-In Date: "+checkIn
+                +"\nCheck-Out Date: "+checkOut+"\nRoom Type: "+roomType+"\nMessage: "+message;
     }
 
 }
