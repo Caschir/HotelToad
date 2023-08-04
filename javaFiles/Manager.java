@@ -8,7 +8,14 @@ public class Manager {
 
     private  String passWord;
 
-    public void generateReport(){
-
+    public void generateReport() throws ClassNotFoundException, SQLException{
+        // Create DataBase object
+        Database d = new Database();
+        //Calls checkCustomerDetails from DataBase class to get details
+        d.checkCustomerDetails();
+        //Calls roomAvailability from DataBase class to get details
+        d.roomAvailability();
+        //Calls bookingDetails from DataBase class to get details
+        d.bookingDetails();
     }
 }
