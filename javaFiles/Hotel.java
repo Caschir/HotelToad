@@ -26,6 +26,14 @@ public class Hotel {
                 System.out.println("Room Type: " + roomType);
                 System.out.println("Check-in: " + checkIn);
                 System.out.println("Check-out: " + checkOut);
+                roomNumber =rooms[i].getRoomNumber();
+                System.out.println("Room Number: "+ roomNumber);
+                //Calls addtoCustomerDetails from DataBase class to store the infomation
+                Database.addtoCustomerDetails(guest.getFirstName() , guest.getLastName(), email, roomNumber);
+                //Calls addBooking from DataBase class to store the infomation
+                Database.addBooking(roomNumber,checkIn,checkOut);
+                //Calls updateRoomAvailability from DataBase class to store the infomations
+                Database.updateRoomAvailability(roomNumber);
                 return;
             }
         }
@@ -38,6 +46,12 @@ public class Hotel {
             if (rooms[i].getRoomNumber() == roomNumber) {
                 rooms[i].availability = true;
                 System.out.println("Room Cancellation Successful!");
+                //Calls deleteCustomerDetails from DataBase class to delete in the Database
+                Database.deleteCustomerDetails(roomNumber);
+                //Calls nowAvailabe from DataBase class to Updates in the Database
+                Database.nowAvailabe(roomNumber);
+                //Calls deleteBooking from DataBase class to delete in the Database
+                Database.deleteBooking(roomNumber);
                 return;
             }
         }

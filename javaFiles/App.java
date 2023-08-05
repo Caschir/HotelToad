@@ -103,8 +103,8 @@ public class App {
                     System.out.println(R.printReservationInfo());
 
                     // Call reserveRoom method from Hotel Class to reserve hotel room for Customer
-                    H.reserveRoom(G, roomType, checkIn, checkOut);
-
+                    H.reserveRoom(G, roomType, checkIn, checkOut,email);
+                    
                     // Create Payment object
                     Payment P = new Payment();
 
