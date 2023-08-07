@@ -11,69 +11,75 @@
         <title>Hotel Toad!</title>
     </head>
     <body>
+      
+  <!-- <div id="booking-form" >
+
+    <form id="booking_menu">
+        <img src="images/pipe.png" alt="pipe">
+        <div class="booking_elements">
+            <label for="name"></label>
+            <input type="text" id="name" placeholder="Full Name" name="visitor_name" required>
+        </div>
+        <div class="booking_elements">
+            <label for="email"></label>
+            <input type="email" id="email" placeholder="Email Address" name="visitor_email" required>
+        </div>
+        <div class="booking_elements">
+            <label for="adult"></label>
+            <input type="number" id="adult" placeholder="Number of Adults" name="total_adults" min="1" required>
+        </div>
+        <div class="booking_elements">
+            <label for="child"></label>
+            <input type="number" id="child" placeholder="Number of Children" name="total_children" required>
+        </div>
+        <div class="booking_elements">
+            <label for="checkin-date"></label>
+            <input type="text" id="checkin-date" placeholder="Check In Date" name="checkin" onfocus="this.type='date'" onblur="this.type='text'" required>
+        </div>
+        <div class="booking_elements">
+            <label for="checkout-date"></label>
+            <input type="text" id="checkout-date" placeholder="Check Out Date" name="checkout" onfocus="this.type='date'" onblur="this.type='text'" required>
+        </div>
+
+        <div class="booking_elements">
+            <label for="room-type"></label>
+            <select id="room-type" name="room-type" required>
+                <option value="">Select Room Type</option>
+                <option value="Classic King">King Room</option>
+                <option value="Classic Queen">Queen Room</option>
+                <option value="Double Twin">Twin Room</option>
+              </select>
+        </div>
+
+        <div class="booking_elements">
+            <label for="message"></label>
+            <textarea id="message" placeholder="Anything else? Let us know here!" name="message" required></textarea>
+        </div>
+        <button id="submit_button" type="submit">Check For Rooms</button>
+    </form>
+ </div>
+ -->
         <!-- Main Webpage top welcome images in a div -->
         <div class="header">
             <div class="logo">
               <img src="images/logo.png" alt="logo">
             </div>
+            <!--tabs, displayed in all tabs-->
+
             <ul class="tabs">
               <li><a href="index.html">Home</a></li>
               <li><a href="rooms.html">Rooms</a></li>
               <li><a href="amenities.html">Amenities</a></li>
+              <li id="BookNowB"><a href="booking.html">Book Now</a></li>
             </ul>
+
+
           </div>
-          
+      <img src="images/hotel.png" class="hotelP" alt="hotel">       
        
-        <!-- Div element containing the booking menu and all booking elements-->
-        <div class="booking">
-            <img src="images/hotel.png" alt="hotel">
-
-            <form id="booking_menu">
-                <img src="images/pipe.png" alt="pipe">
-                <div class="booking_elements">
-                    <label for="name"></label>
-                    <input type="text" id="name" placeholder="Full Name" name="visitor_name" required>
-                </div>
-                <div class="booking_elements">
-                    <label for="email"></label>
-                    <input type="email" id="email" placeholder="Email Address" name="visitor_email" required>
-                </div>
-                <div class="booking_elements">
-                    <label for="adult"></label>
-                    <input type="number" id="adult" placeholder="Number of Adults" name="total_adults" min="1" required>
-                </div>
-                <div class="booking_elements">
-                    <label for="child"></label>
-                    <input type="number" id="child" placeholder="Number of Children" name="total_children" required>
-                </div>
-                <div class="booking_elements">
-                    <label for="checkin-date"></label>
-                    <input type="text" id="checkin-date" placeholder="Check In Date" name="checkin" onfocus="this.type='date'" onblur="this.type='text'" required>
-                </div>
-                <div class="booking_elements">
-                    <label for="checkout-date"></label>
-                    <input type="text" id="checkout-date" placeholder="Check Out Date" name="checkout" onfocus="this.type='date'" onblur="this.type='text'" required>
-                </div>
-
-                <div class="booking_elements">
-                    <label for="room-type"></label>
-                    <select id="room-type" name="room-type" required>
-                        <option value="">Select Room Type</option>
-                        <option value="Classic King">King Room</option>
-                        <option value="Classic Queen">Queen Room</option>
-                        <option value="Double Twin">Twin Room</option>
-                      </select>
-                </div>
-
-                <div class="booking_elements">
-                    <label for="message"></label>
-                    <textarea id="message" placeholder="Anything else? Let us know here!" name="message" required></textarea>
-                </div>
-                <button id="submit_button" type="submit">Check For Rooms</button>
-            </form>
-        </div>
         <div class="border">       
         </div>
+
         <script src="app.js">
         </script>
     </body>

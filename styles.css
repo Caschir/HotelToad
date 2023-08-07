@@ -39,6 +39,7 @@ textarea {
     max-height: 50px;
   }
   
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -47,6 +48,19 @@ textarea {
     padding: 10px;
     height: 75px;
   }
+
+
+
+  #Close {
+    color: #f6f6f6;
+    font-size: x-large;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+  }
+  
 
 
   .border {
@@ -90,6 +104,36 @@ textarea {
     background-color: #fff;
     color: #333;
   }
+  .tabs #BookNowB a {
+    background-color: rgb(192, 81, 7); 
+    border-radius: 0px;
+    border:none;
+    padding: 12px 15px;
+  }
+  .tabs .BookNowB1 a {
+    background-color: rgb(2, 1, 1); 
+    border-radius: 0px;
+    border:none;
+  }
+  .tabs #BookNowB a:hover{
+    color: #000000;
+    background-color: #f6f6f6;
+    
+  }
+
+  #BookNowB{
+    margin-right: 2%;
+    position: absolute; right: 0;
+    font-size: large;
+  }
+  .BookNowB1{
+    top: 45%;
+    left: 24%;
+    position: absolute;
+    font-size: large;
+  }
+
+
   
   /*Amenities tab styling*/
 
@@ -114,10 +158,12 @@ textarea {
     position: relative;
     
   }
+
   .P1 {
     margin: 7%;
     width: 40%;
   }
+
   .P2 {
     margin: 7%;
     margin-left: 44%;
@@ -151,7 +197,7 @@ textarea {
     letter-spacing:1px;
     font-size: large;
     position: absolute;
-    right: 21%;
+    right: 20%;
     top: 47%;
   }
 
@@ -168,16 +214,11 @@ textarea {
 
 
 /* Styles for div elements with class booking and the images within */
-.booking {
-    margin-top: 25px;
-    position: relative;
+.hotelP {
+width: 100%;
 }
 
-.booking img {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 /* Styles for div element with id bookingmenu */
 #booking_menu {
@@ -236,4 +277,28 @@ textarea {
   
   #room-type:focus {
     border-color: #ff0000; 
+  }
+
+
+  /*Booking*/
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(5,3fr);
+    grid-gap: 22px;
+  }
+  .book{
+    padding: 40px 0;
+    background-color:#4c4444 ;
+    color: #fff;
+  }
+  .book h1 span{
+  color: #bd5a5a;
+  }
+  .book input{
+    padding: 19px;
+  }
+  .book button{
+    background: #0eb841;
+    color: #fff;
   }
