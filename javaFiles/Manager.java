@@ -1,5 +1,6 @@
 package Hotel_Reservation.src;
 
+import java.sql.SQLException;
 // Java Manager class
 public class Manager {
 
