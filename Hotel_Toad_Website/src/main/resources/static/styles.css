@@ -1,0 +1,305 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  height: 250px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* Styles for label element */
+label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+
+/* Styles for textarea element */
+textarea {
+    height: 150px;
+    width: 300px
+}
+
+/* Styles for logo div and images within div */
+
+.logo {
+    display: flex;
+    align-items: center; 
+    border: 5px solid #000000; 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 145px;
+  }
+  
+  .logo img {
+    max-height: 50px;
+  }
+  
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    height: 75px;
+  }
+
+
+
+  #Close {
+    color: #f6f6f6;
+    font-size: x-large;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+  }
+  
+
+
+  .border {
+    position: relative;
+    padding-bottom: 20px; 
+    background-color: rgb(169, 44, 44); 
+    height: 200px;
+  }
+  .border::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: rgb(26, 17, 17); 
+    height: 170px;
+  }
+
+  .tabs {
+    list-style: none;
+    margin: 5%;
+    padding: 0;
+    display: flex;
+    margin-right: auto; 
+  }
+
+  .tabs li {
+    margin-right: 10px;
+  }
+  
+  .tabs li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  
+  .tabs li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  .tabs #BookNowB a {
+    background-color: rgb(192, 81, 7); 
+    border-radius: 0px;
+    border:none;
+    padding: 12px 15px;
+  }
+  .tabs .BookNowB1 a {
+    background-color: rgb(2, 1, 1); 
+    border-radius: 0px;
+    border:none;
+  }
+  .tabs #BookNowB a:hover{
+    color: #000000;
+    background-color: #f6f6f6;
+    
+  }
+
+  #BookNowB{
+    margin-right: 2%;
+    position: absolute; right: 0;
+    font-size: large;
+  }
+  .BookNowB1{
+    top: 45%;
+    left: 24%;
+    position: absolute;
+    font-size: large;
+  }
+
+
+  
+  /*Amenities tab styling*/
+
+  .hAmenitiesPic{ 
+    width: 100%;
+    overflow: hidden;
+    height: 110%;
+    display: block;
+    opacity: 0.8;
+  }
+  .tabTitle {
+    font-family:'Berling SB Roman', Times, serif ;
+    font-style: italic;
+    font-size: xx-large;
+    position: absolute;
+    top: 80%;
+    left: 49%;
+    color: rgb(30, 22, 28);
+  }
+
+  .aAmenities{
+    position: relative;
+    
+  }
+
+  .P1 {
+    margin: 7%;
+    width: 40%;
+    border-radius: 50px;
+  }
+
+  .P2 {
+    margin: 7%;
+    margin-left: 44%;
+    width: 40%;
+    border-radius: 50px;
+  }
+ 
+  
+  .TextT1 {
+    line-height: 0.6;
+    opacity: 0.6;
+    font-size: x-large;
+    font-family:'Berling SB Roman', Times, serif ;
+    color: rgb(13, 48, 18);
+    position: absolute;
+    right: 28%;
+    top: 25%;
+  }
+  .TextT2 {
+    line-height: 0.6;
+    opacity: 0.6;
+    font-size: x-large;
+    font-family:'Berling SB Roman', Times, serif ;
+    color: rgb(13, 48, 18);
+    position: absolute;
+    right: 68%;
+    top: 25%;
+  }
+
+
+  .Text1{
+    letter-spacing:1px;
+    font-size: large;
+    position: absolute;
+    right: 18%;
+    top: 47%;
+  }
+
+  .Text2{
+    letter-spacing:1px;
+    font-size: large;
+    position: absolute;
+    right: 61%;
+    top: 47%;
+  }
+
+
+/* end amenities tab*/
+
+
+/* Styles for div elements with class booking and the images within */
+.hotelP {
+    width: 100%;
+}
+
+
+
+/* Styles for div element with id bookingmenu */
+#booking_menu {
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid #0073ff;
+    font-size: 24px;
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    border-radius: 20px;
+    background-color: rgba(240,248,255,0.5);
+    padding: 50px;
+    margin-right: 20px;
+    justify-content: space-around;
+}
+
+/* Styles for type input of div elements with class booking_element */
+.booking_elements input{
+    background-color: rgba(240,248,255,0.3);
+    border: 2px solid #0073ff;
+    font-size: 18px;
+    display: inline-block;
+    width: 175px;
+    height: 50px;
+}
+
+/* Styles for type textarea of div elements with class booking_element */
+.booking_elements textarea{
+    background-color: rgba(240,248,255,0.6);
+    border: 2px solid #0073ff;
+    font-size: 18px;
+    display: inline-block;
+    width: 355px;
+    height: 200px;
+}
+
+/* Styles for the submit button */
+#submit_button {
+    font-size: 24px;
+    color: khaki;
+    background-color: rgba(30,144,255, 0.6);
+    position: absolute;
+    bottom: 5px;
+}
+
+#room-type {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #0073ff; 
+    border-radius: 5px;
+    margin-right: 220px;
+  }
+  
+  #room-type:focus {
+    border-color: #ff0000; 
+  }
+
+
+  /*Booking*/
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(5,3fr);
+    grid-gap: 22px;
+  }
+  .book{
+    padding: 40px 0;
+    background-color:#4c4444 ;
+    color: #fff;
+  }
+  .book h1 span{
+  color: #bd5a5a;
+  }
+  .book input{
+    padding: 19px;
+  }
+  .book button{
+    background: #0eb841;
+    color: #fff;
+  }

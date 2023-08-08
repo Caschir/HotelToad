@@ -1,0 +1,79 @@
+<!-- booking.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Hotel Toad - rooms</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="logo">
+    </div>
+    <ul class="tabs">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="amenities.html">Amenities</a></li>
+      <li id="BookNowB"><a href="booking.html">Book Now</a></li>
+
+    </ul>
+
+  </div>
+
+
+<!--Booking form section-->
+<section class="book">
+  <div class="container flex_space">
+  <div class="text">
+    <h1 style="font-size: 28px;"> Search for <span>Rooms</span></h1>
+  </div>
+  <div class="form">
+    <form method="post" action="/app" class="grid">
+      <input name=firstname type="text" placeholder="First Name" required>
+      <input name=lastname type="text" placeholder="Last Name" required>
+      <input name=email type="email" placeholder="Email" required>
+      <input name=adults type="number" placeholder="Adults" min="1" max="6" required>
+      <input name=children type="number" placeholder="Children" min="0" max="8" required>
+      <input name=checkin id="checkin" type="date" placeholder="Check in" min="" required>
+      <input name=checkout id=checkout type="date" placeholder="Check Out" required>
+      <select id="room-type" name="roomtype" required>
+        <option value="single">Select Room Type</option>
+        <option value="single">Single</option>
+        <option value="double">Double</option>
+        <option value="triple">Triple</option>
+        <option value="suite">Suite</option>
+      </select>
+      <textarea style="height: auto; width: auto;" id="message" placeholder="Anything else? Let us know here!" name="message" required></textarea>
+      <button type="submit"> Search Available Rooms </button>
+    </form>
+  </div>
+</div>
+</section>
+  <script>
+    // Get today's date as a string in the format "YYYY-MM-DD"
+    let today = new Date().toISOString().split('T')[0];
+
+    // Set the minimum allowed date for the date input
+    document.getElementById("checkin").min = today;
+
+    // Function to add day to Check Out min
+    function minCheckoutDate(date, day){
+      let newDate = new Date(date);
+      newDate.setDate(newDate.getDate() + day)
+      return newDate;
+    }
+
+    document.getElementById("checkout").min = minCheckoutDate(today, 1).toISOString().split('T')[0];
+
+    document.getElementById("checkin").addEventListener("change", function () {
+      let checkin = this.value;
+
+      document.getElementById("checkout").min = minCheckoutDate(checkin, 1).toISOString().split('T')[0];
+    })
+
+  </script>
+</body>
+</html>
