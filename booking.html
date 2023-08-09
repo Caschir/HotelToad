@@ -32,10 +32,20 @@
   </div>
   <div class="form">
     <form class="grid">
-      <input type="date" placeholder="Check in" required>
-      <input type="date" placeholder="Check Out" required>
-      <input type="number" placeholder="Adults" min="1" required>
-      <input type="number" placeholder="Children" min="0" required>
+      <input name=firstname type="text" placeholder="First Name" required>
+      <input name=lastname type="text" placeholder="Last Name" required>
+      <input name=email type="email" placeholder="Email" required>
+      <input name=adults type="number" placeholder="Adults" min="1" max="6" required>
+      <input name=children type="number" placeholder="Children" min="0" max="8" required>
+      <input name=checkin type="date" placeholder="Check in" min="" required>
+      <input name=checkout type="date" placeholder="Check Out" required>
+      <select id="room-type" name="roomtype" required>
+        <option value="single">Select Room Type</option>
+        <option value="single">Single</option>
+        <option value="double">Double</option>
+        <option value="triple">Triple</option>
+        <option value="suite">Suite</option>
+      </select>
       <button type="submit"> Search Available Rooms </button>
     </form>
   </div>
