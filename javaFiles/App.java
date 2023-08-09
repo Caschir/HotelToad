@@ -1,11 +1,50 @@
 package Hotel_Reservation.src;
 
-// Import Java Scanner for user input
+// Import Statements for our program
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
 
 // Main Java App class
-public class App {
-    public static void main(String[] args) throws Exception{
+public class App{
+    public static void main(String[] ars) throws Exception{
+        //Create GUI frame
+        JFrame frame = new JFrame("Hotel Toad GUI");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1280, 720);
+
+        //Create a main panel
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
+
+        //Create a buttons panel for top buttons
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+        //Create buttons and add them to buttons panel
+        JButton homeButton = new JButton("Home");
+        buttonPanel.add(homeButton);
+        JButton roomsButton = new JButton("Rooms");
+        buttonPanel.add(roomsButton);
+        JButton amenitiesButton = new JButton("Amenities");
+        buttonPanel.add(amenitiesButton);
+
+        //Add button panel to the north of main panel
+        mainPanel.add(buttonPanel, BorderLayout.NORTH);
+
+        // Load the hotel image and create a JLabel for the image
+        ImageIcon imageIcon = new ImageIcon("images/hotel.png");
+        JLabel imageLabel = new JLabel(imageIcon);
+
+
+        // Add imageLabel to the bottom of the main panel
+        mainPanel.add(imageLabel, BorderLayout.SOUTH);
+
+        //Add main panel to the frame
+        frame.add(mainPanel);
+
+        //Make the frame visible
+        frame.setVisible(true);
+
 
         cls();
 
@@ -103,8 +142,8 @@ public class App {
                     System.out.println(R.printReservationInfo());
 
                     // Call reserveRoom method from Hotel Class to reserve hotel room for Customer
-                    H.reserveRoom(G, roomType, checkIn, checkOut,email);
-                    
+                    H.reserveRoom(G, roomType, checkIn, checkOut);
+
                     // Create Payment object
                     Payment P = new Payment();
 
