@@ -17,6 +17,24 @@ public class Hotel {
     public void roomInfo(){
 
     }
+     public static Object reserveRoom(Guest guest, String roomType, String checkIn, String checkOut, String email) throws ClassNotFoundException, SQLException{
+        for (int i = 0; i < rooms.length; i++){
+            if (rooms[i].getRoomType().equalsIgnoreCase(roomType) && rooms[i].isAvailable()){
+                rooms[i].availability = false;
+                
+                int roomNumber =rooms[i].getRoomNumber();
+                
+                //Calls addtoCustomerDetails from DataBase class to store the infomation
+                Database.addtoCustomerDetails(guest.getFirstName() , guest.getLastName(), email, roomNumber);
+                //Calls addBooking from DataBase class to store the infomation
+                Database.addBooking(roomNumber,checkIn,checkOut);
+                //Calls updateRoomAvailability from DataBase class to store the infomations
+                Database.updateRoomAvailability(roomNumber);
+                return roomNumber;
+            }
+        }
+        return null;
+    }
 
     // Hotel method for reserving room for Customer
     public void reserveRoom(Guest guest, String roomType, String checkIn, String checkOut, String email) throws ClassNotFoundException, SQLException{
