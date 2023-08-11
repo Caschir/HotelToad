@@ -37,7 +37,7 @@ public class Hotel {
     }
 
     // Hotel method for reserving room for Customer
-    public void reserveRoom(Guest guest, String roomType, String checkIn, String checkOut, String email) throws ClassNotFoundException, SQLException{
+    public void reserveRoom1(Guest guest, String roomType, String checkIn, String checkOut, String email) throws ClassNotFoundException, SQLException{
         for (int i = 0; i < rooms.length; i++){
             if (rooms[i].getRoomType().equalsIgnoreCase(roomType) && rooms[i].isAvailable()){
                 rooms[i].availability = false;
