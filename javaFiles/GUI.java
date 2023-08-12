@@ -93,6 +93,7 @@ public class GUI {
     
         JPanel adminPanel = new JPanel();
         JButton enter = new JButton("Enter");
+        JButton goBack = new JButton("Go Back");
         adminPanel.setLayout(new BorderLayout());
         
         JPanel buttonPanel2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -102,7 +103,7 @@ public class GUI {
         password=new JTextField("Password");  
         password.setBounds(50,150, 200,30); 
         buttonPanel2.add(enter);
-    
+        buttonPanel2.add(goBack);
         adminPanel.add(buttonPanel2);
         
         adminFrame.add(userName); adminFrame.add(password);
@@ -119,6 +120,14 @@ public class GUI {
             
         }
         });
+        goBack.addActionListener(new ActionListener()  {
+            // Code to handle admin actions
+            public void actionPerformed(ActionEvent e){
+              adminFrame.setVisible(false);
+              frame.setVisible(true);
+              
+            }
+        });
 
         JFrame adminView = new JFrame("Hotel Toad GUI");
         adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -127,6 +136,7 @@ public class GUI {
         JButton checkCustomerDetails  = new JButton("Check Customer Details");
         JButton roomAvailability  = new JButton("Rooms ");
         JButton bookingDetails  = new JButton("Booking Details");
+        JButton goBack2  = new JButton("Go Back");
         adminViewer.setLayout(new BorderLayout());
 
         JPanel buttonPanel3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -137,6 +147,7 @@ public class GUI {
         buttonPanel3.add(roomAvailability);
         buttonPanel3.add(bookingDetails);
         adminViewer.add(buttonPanel3);
+        buttonPanel3.add(goBack2);
         adminView.add(adminViewer);
         JTextArea textArea = new JTextArea();
         
@@ -148,6 +159,15 @@ public class GUI {
         
         }
 
+        });
+        goBack2.addActionListener(new ActionListener() {
+      
+            public void actionPerformed(ActionEvent e){
+              adminView.setVisible(false);
+              adminFrame.setVisible(true);
+             
+            }
+      
         });
         checkCustomerDetails.addActionListener(new ActionListener() {
         
@@ -201,6 +221,7 @@ public class GUI {
 
         JPanel customerPanel = new JPanel();
         JButton bookNow = new JButton("Book Now");
+        JButton goBack3 = new JButton("Go Back");
         customerPanel.setLayout(new FlowLayout());
         
         JPanel buttonPanel4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -221,6 +242,7 @@ public class GUI {
         roomType=new JTextField("Room Type     ");  
         
         buttonPanel4.add(bookNow);
+        buttonPanel4.add(goBack3);
         customerPanel.add(buttonPanel4);
         customerPanel.add(firstName);
         customerPanel.add(email);
@@ -413,6 +435,14 @@ public class GUI {
             
         }
         });
+         goBack3.addActionListener(new ActionListener()  {
+            // Code to handle admin actions
+            public void actionPerformed(ActionEvent e){
+              customerViewFrame.setVisible(false);
+              frame.setVisible(true);
+              
+            }
+          });
     }
 
     // buttons styling on hover
