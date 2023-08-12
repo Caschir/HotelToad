@@ -24,12 +24,7 @@ public class Hotel {
                 
                 int roomNumber =rooms[i].getRoomNumber();
                 
-                //Calls addtoCustomerDetails from DataBase class to store the infomation
-                Database.addtoCustomerDetails(guest.getFirstName() , guest.getLastName(), email, roomNumber);
-                //Calls addBooking from DataBase class to store the infomation
-                Database.addBooking(roomNumber,checkIn,checkOut);
-                //Calls updateRoomAvailability from DataBase class to store the infomations
-                Database.updateRoomAvailability(roomNumber);
+               
                 return roomNumber;
             }
         }

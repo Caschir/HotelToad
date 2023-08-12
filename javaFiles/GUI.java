@@ -332,32 +332,7 @@ public class GUI {
             
         }
         });
-        
-        
-        
-        
-        
-        
-        
-        
-        Guest G = new Guest(firstName1String, lastName1String, email1String);
-        int adults1 ;
-        if (adults != null) {
-            adults1 = Integer.parseInt(adults);
-        } else {
-            // Handle the null case, maybe set a default value or throw an exception
-            adults1 = 0;
-        }
-    
-        int children1 ;
-        if (children != null) {
-            children1 = Integer.parseInt(children);
-        } else {
-            // Handle the null case, maybe set a default value or throw an exception
-            children1 = 0;
-        }
-        Reservation R = new Reservation(adults1, children1, checkIn1String, checkOut1String, roomType1String, message1String);
-        
+
         bookNow.addActionListener(new ActionListener()  {
         // Code to handle admin actions
         public void actionPerformed(ActionEvent e){
@@ -368,6 +343,23 @@ public class GUI {
             adults = numAuldts.getText();
             email1String = email.getText();
             firstName1String = firstName.getText();
+            Guest G = new Guest(firstName1String, lastName1String, email1String);
+            int adults1 ;
+            if (adults != null) {
+                adults1 = Integer.parseInt(adults);
+            } else {
+                // Handle the null case, maybe set a default value or throw an exception
+                adults1 = 0;
+            }
+        
+            int children1 ;
+            if (children != null) {
+                children1 = Integer.parseInt(children);
+            } else {
+                // Handle the null case, maybe set a default value or throw an exception
+                children1 = 0;
+            }
+            Reservation R = new Reservation(adults1, children1, checkIn1String, checkOut1String, roomType1String, message1String);
             try {
                 if (Hotel.reserveRoom(G, roomType1String, checkIn1String, checkOut1String, email1String)== null){
                     customerPanel.add(noRoom);
@@ -375,7 +367,7 @@ public class GUI {
                     customerViewFrame.setVisible(true);
                 }
                 else if ( Hotel.reserveRoom(G, roomType1String, checkIn1String, checkOut1String, email1String)!= null){
-                    
+                    Hotel.reserveRoom1(G, roomType1String, checkIn1String, checkOut1String, email1String);
                     customerPanel.add(conformationJLabel);
                     customerViewFrame.add(customerPanel);
                     customerViewFrame.setVisible(true);
