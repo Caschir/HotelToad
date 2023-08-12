@@ -332,166 +332,50 @@ public class GUI {
             
         }
         });
-        firstName.getDocument().addDocumentListener(new DocumentListener() {
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                private void updateResult() {
-                    firstName1String = firstName.getText();
-                    //resultLabel.setText("You entered: " + inputText);
-                }
-            });
-        email.getDocument().addDocumentListener(new DocumentListener() {
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                private void updateResult() {
-                    email1String = email.getText();
-                    //resultLabel.setText("You entered: " + inputText);
-                }
-            });
-        numAuldts.getDocument().addDocumentListener(new DocumentListener() {
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                private void updateResult() {
-                adults = numAuldts.getText();
-                    //resultLabel.setText("You entered: " + inputText);
-                }
-            });
-        numChildren.getDocument().addDocumentListener(new DocumentListener() {
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                private void updateResult() {
-                children = numChildren.getText();
-                    //resultLabel.setText("You entered: " + inputText);
-                }
-            });
-        checkIn.getDocument().addDocumentListener(new DocumentListener() {
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                private void updateResult() {
-                checkIn1String = checkIn.getText();
-                    //resultLabel.setText("You entered: " + inputText);
-                }
-            });
-        checkOut.getDocument().addDocumentListener(new DocumentListener() {
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                private void updateResult() {
-                    checkOut1String = checkOut.getText();
-                    //resultLabel.setText("You entered: " + inputText);
-                }
-            });
-        roomType.getDocument().addDocumentListener(new DocumentListener() {
-                @Override
-                public void insertUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void removeUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                @Override
-                public void changedUpdate(DocumentEvent e) {
-                    updateResult();
-                }
-
-                private void updateResult() {
-                roomType1String= roomType.getText();
-                    //resultLabel.setText("You entered: " + inputText);
-                }
-            });
+        
+        
+        
+        
+        
+        
+        
         
         Guest G = new Guest(firstName1String, lastName1String, email1String);
+        int adults1 ;
+        if (adults != null) {
+            adults1 = Integer.parseInt(adults);
+        } else {
+            // Handle the null case, maybe set a default value or throw an exception
+            adults1 = 0;
+        }
+    
+        int children1 ;
+        if (children != null) {
+            children1 = Integer.parseInt(children);
+        } else {
+            // Handle the null case, maybe set a default value or throw an exception
+            children1 = 0;
+        }
+        Reservation R = new Reservation(adults1, children1, checkIn1String, checkOut1String, roomType1String, message1String);
+        
         bookNow.addActionListener(new ActionListener()  {
         // Code to handle admin actions
         public void actionPerformed(ActionEvent e){
+            roomType1String= roomType.getText();
+            checkOut1String = checkOut.getText();
+            checkIn1String = checkIn.getText();
+            children = numChildren.getText();
+            adults = numAuldts.getText();
+            email1String = email.getText();
+            firstName1String = firstName.getText();
             try {
-                if (Hotel.reserveRoom(G, roomType1String, checkIn1String, checkOut1String, email1String)!= null){
+                if (Hotel.reserveRoom(G, roomType1String, checkIn1String, checkOut1String, email1String)== null){
                     customerPanel.add(noRoom);
                     customerViewFrame.add(customerPanel);
                     customerViewFrame.setVisible(true);
                 }
-                else if ( Hotel.reserveRoom(G, roomType1String, checkIn1String, checkOut1String, email1String)== null){
-                    Hotel.reserveRoom1(G, roomType1String, checkIn1String, checkOut1String, email1String);
+                else if ( Hotel.reserveRoom(G, roomType1String, checkIn1String, checkOut1String, email1String)!= null){
+                    
                     customerPanel.add(conformationJLabel);
                     customerViewFrame.add(customerPanel);
                     customerViewFrame.setVisible(true);

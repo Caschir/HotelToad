@@ -115,7 +115,7 @@ public class Database {
         String username = "admin"; // MySQL credentials
         String password = "01NoShotFlip$";
         String query
-            = "update Room_Inventory SET Availability = 'Not Availability' where RoomNum? ";
+            = "update Room_Inventory SET Availability = 'Not Availability' where RoomNum = ? ";
          Class.forName(
             "com.mysql.cj.jdbc.Driver"); // Driver name
         Connection con = DriverManager.getConnection(
@@ -133,7 +133,7 @@ public class Database {
         String username = "admin"; // MySQL credentials
         String password = "01NoShotFlip$";
         String query
-            = "update Room_Inventory SET Availability =  'Availability' where RoomNum? ";
+            = "update Room_Inventory SET Availability =  'Availability' where RoomNum = ? ";
          Class.forName(
             "com.mysql.cj.jdbc.Driver"); // Driver name
         Connection con = DriverManager.getConnection(
