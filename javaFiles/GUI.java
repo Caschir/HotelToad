@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -18,17 +19,19 @@ public class GUI {
         // Create GUI frame
         JFrame frame = new JFrame("Hotel Toad GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1280, 720);
+        frame.setSize(1920, 1080);
 
         // Create panels
         JPanel mainPanel = new JPanel(new CardLayout());
         JPanel homePanel = new JPanel(new BorderLayout());
         JPanel bookingPanel = new JPanel(new BorderLayout());
+        JPanel roomsPanel = new JPanel(new BorderLayout());
+        JPanel amenitiesPanel = new JPanel(new BorderLayout());
+        JPanel logoAndButtonPanel = new JPanel(new BorderLayout());
 
         // Create buttons panel for top buttons
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
-
+        
         // Create buttons
         JButton homeButton = buttonStyling("Home", Color.GREEN);
         JButton roomsButton = buttonStyling("Rooms", Color.GREEN);
@@ -36,29 +39,73 @@ public class GUI {
         JButton bookingButton = buttonStyling("Book Now", Color.RED);
         JButton adminButton = buttonStyling("Admin",Color.DARK_GRAY);
 
+        // scrollable panels
+        JScrollPane homeScrollPane = new JScrollPane(homePanel);
+        JScrollPane amenitiesScrollPane = new JScrollPane(amenitiesPanel);
+        JScrollPane RoomsScrollPane = new JScrollPane(roomsPanel);
+        JScrollPane BookingScrollPane = new JScrollPane(bookingPanel);
+
+
         // Add buttons to button panel
         buttonPanel.add(homeButton);
         buttonPanel.add(roomsButton);
         buttonPanel.add(amenitiesButton);
-        buttonPanel.add(bookingButton);
         buttonPanel.add(adminButton);
-
-
-
-        // Add button panel to home panel
-        homePanel.add(buttonPanel, BorderLayout.NORTH);
 
 
         // Load the hotel image and create a JLabel for the image
         ImageIcon imageIcon = new ImageIcon("images/hotel.png");
         JLabel imageLabel = new JLabel(imageIcon);
-
         // Add imageLabel to the center of the home panel
         homePanel.add(imageLabel, BorderLayout.CENTER);
 
+        JLabel footerLabel = new JLabel();
+        MatteBorder footerBorder = BorderFactory.createMatteBorder(150, 0, 5, 0, Color.darkGray);
+        footerLabel.setBorder(footerBorder);
+
+        homePanel.add(footerLabel, BorderLayout.SOUTH);
+
+
+        ImageIcon logo = new ImageIcon("images/logo.png");
+        JLabel logoLabel = new JLabel(logo);
+        Border border = BorderFactory.createLineBorder(Color.red, 3);
+        logoLabel.setBorder(border);
+
+
+        logoAndButtonPanel.add(bookingButton, BorderLayout.EAST);
+        logoAndButtonPanel.add(logoLabel, BorderLayout.WEST);
+        logoAndButtonPanel.add(buttonPanel, BorderLayout.CENTER);
+        homePanel.add(logoAndButtonPanel, BorderLayout.NORTH);
+        buttonPanel.setBackground(Color.gray);
+        
+        logoAndButtonPanel.setBackground(Color.gray);
+
+        EmptyBorder b = new EmptyBorder(22, 120, 0, 0);    
+        buttonPanel.setBorder(b);
+        
+        EmptyBorder a = new EmptyBorder(0, 33, 0, 74);
+        bookingButton.setBorder(a);
+    
+        
+        // Rooms panel start
+        
+        // Load P1 image 
+        ImageIcon P1 = new ImageIcon("images/single1.png");
+        JLabel P1Label = new JLabel(P1);
+                 
+         // Add padding to the P1Label
+        EmptyBorder paddingBorder = new EmptyBorder(122, 140, 0, 1244);           
+        P1Label.setBorder(paddingBorder);         
+        roomsPanel.add(P1Label, BorderLayout.NORTH);
+                 
+
+         // Rooms panel end
+
         // Add panels to the main panel with CardLayout
-        mainPanel.add(homePanel, "Home");
-        mainPanel.add(bookingPanel, "Booking");
+        mainPanel.add(homeScrollPane, "Home");
+        mainPanel.add(BookingScrollPane, "Booking");
+        mainPanel.add(RoomsScrollPane, "Rooms");
+        mainPanel.add(amenitiesScrollPane, "Amenities");
 
         // Add main panel to the frame
         frame.add(mainPanel);
@@ -68,23 +115,47 @@ public class GUI {
             public void actionPerformed(ActionEvent e) {
                 CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                 // add buttonPanel to booking panel
-                 bookingPanel.add(buttonPanel, BorderLayout.NORTH);
+        bookingPanel.add(logoAndButtonPanel, BorderLayout.NORTH);
 
                 cardLayout.show(mainPanel, "Booking");
             }
         });
+        amenitiesButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
+                // add buttonPanel to booking panel
+        amenitiesPanel.add(logoAndButtonPanel, BorderLayout.NORTH);
+
+                cardLayout.show(mainPanel, "Amenities");
+
+            }
+        });        
+        roomsButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
+                // add buttonPanel to booking panel
+        roomsPanel.add(logoAndButtonPanel, BorderLayout.NORTH);
+
+         
+                 cardLayout.show(mainPanel, "Rooms");
+
+            }
+        });          
+              
         // action listener for home panel
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
-                 homePanel.add(buttonPanel, BorderLayout.NORTH);
+        homePanel.add(logoAndButtonPanel, BorderLayout.NORTH);
 
                 cardLayout.show(mainPanel, "Home");
             }
         });
-        // Make the frame visible
-        frame.setVisible(true);
 
+        // Make frame visible
+        frame.setVisible(true);
+    }
+    /* 
         JFrame adminFrame = new JFrame("Hotel Toad GUI");
         adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         adminFrame.setSize(1280, 720);
@@ -444,7 +515,7 @@ public class GUI {
             }
           });
     }
-
+*/
     // buttons styling on hover
     private static JButton buttonStyling(String title, Color c) {
         JButton button = new JButton(title);
