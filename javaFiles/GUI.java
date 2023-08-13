@@ -213,8 +213,8 @@ public class GUI {
         JButton goBack2  = new JButton("Go Back");
         adminViewer.setLayout(new BorderLayout());
         adminView.add(new JScrollPane(customerDetailsJTable), BorderLayout.EAST);
-        adminView.add(new JScrollPane(roomAvJTable), BorderLayout.EAST);
-        adminView.add(new JScrollPane(bookingJTable), BorderLayout.EAST);
+        adminView.add(new JScrollPane(roomAvJTable), BorderLayout.SOUTH);
+        adminView.add(new JScrollPane(bookingJTable), BorderLayout.WEST);
         JPanel buttonPanel3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         checkCustomerDetails.setBounds(10, 0, 200, 30);
         roomAvailability.setBounds(300, 0, 200, 30);
