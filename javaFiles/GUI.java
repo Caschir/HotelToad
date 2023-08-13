@@ -308,7 +308,7 @@ public class GUI {
         JButton bookNow = new JButton("Book Now");
         JButton goBack3 = new JButton("Go Back");
         customerPanel.setLayout(new FlowLayout());
-        
+        JTable roomAv2JTable = new JTable();
         JPanel buttonPanel4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JTextField firstName ,lastName, email,numAuldts, numChildren, checkIn ,checkOut, roomType;
         firstName=new JTextField("First Name        ");  
@@ -326,7 +326,7 @@ public class GUI {
         
         roomType=new JTextField("Room Type     ");  
         
-        customerViewFrame.add(new JScrollPane(roomAvJTable), BorderLayout.SOUTH);
+        customerViewFrame.add(new JScrollPane(roomAv2JTable), BorderLayout.SOUTH);
         buttonPanel4.add(bookNow);
         buttonPanel4.add(goBack3);
         customerPanel.add(buttonPanel4);
@@ -346,7 +346,7 @@ public class GUI {
             DefaultTableModel model = Database.getRoomAvailabilityModel();
 
                 // Set Model to JTable
-            roomAvJTable.setModel(model);
+            roomAv2JTable.setModel(model);
             } catch (ClassNotFoundException e1) {
                 // TODO Auto-generated catch block
                 e1.printStackTrace();
