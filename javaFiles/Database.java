@@ -8,35 +8,41 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Database {
-     static void checkCustomerDetails() throws ClassNotFoundException, SQLException{
-         String url
-            = "jdbc:mysql://hotel-reservation.cxhswfveunmf.us-west-1.rds.amazonaws.com:3306/Hotel_Reservation"; // table details
-        String username = "admin"; // MySQL credentials
-        String password = "01NoShotFlip$";
-        String query
-            = "select *from Customer_Details"; // query to be run
-        Class.forName(
-            "com.mysql.cj.jdbc.Driver"); // Driver name
-        Connection con = DriverManager.getConnection(
-            url, username, password);
-        System.out.println(
-            "Connection Established successfully");
-        Statement st = con.createStatement();
-        ResultSet rs
-            = st.executeQuery(query); // Execute query
-        while(rs.next()){
-            int id = rs.getInt("ID");
-            String fname
-             = rs.getString("First_Name"); // Retrieve name from db
-            String lname = rs.getString("Last_Name");
-            String email = rs.getString("Email");
- 
-            System.out.println(id +" "+fname +" "+lname+" "+email);
-        } // Print result on console
-        st.close(); // close statement
-        con.close(); // close connection
-       // System.out.println("Connection Closed....");
-    }
+     public static DefaultTableModel getCustomerDetailsModel() throws ClassNotFoundException, SQLException {
+            String url = "jdbc:mysql://hotel-reservation.cxhswfveunmf.us-west-1.rds.amazonaws.com:3306/Hotel_Reservation";
+            String username = "admin";
+            String password = "01NoShotFlip$";
+            String query = "select *from Customer_Details";
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(url, username, password);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            DefaultTableModel model = new DefaultTableModel();
+
+            // Add Columns to Model
+            for (int i = 1; i <= columnCount; i++) {
+                model.addColumn(metaData.getColumnName(i));
+            }
+
+            // Add Rows to Model
+            while (rs.next()) {
+                Object[] rowData = new Object[columnCount];
+                for (int i = 1; i <= columnCount; i++) {
+                    rowData[i - 1] = rs.getObject(i);
+                }
+                model.addRow(rowData);
+            }
+
+            st.close();
+            con.close();
+
+            return model;
+        }
     static void addtoCustomerDetails(String firstName, String lastName ,String email, int roomNum ) throws ClassNotFoundException, SQLException{
        
         String url
@@ -82,32 +88,41 @@ public class Database {
         con.close(); // close connection  
    }
    
-    void roomAvailability() throws ClassNotFoundException, SQLException{
-        String url
-            = "jdbc:mysql://hotel-reservation.cxhswfveunmf.us-west-1.rds.amazonaws.com:3306/Hotel_Reservation"; // table details
-        String username = "admin"; // MySQL credentials
-        String password = "01NoShotFlip$";
-        String query
-            = "select *from Room_Inventory"; // query to be run
-         Class.forName(
-            "com.mysql.cj.jdbc.Driver"); // Driver name
-        Connection con = DriverManager.getConnection(
-            url, username, password); 
-        Statement st = con.createStatement();
-        ResultSet rs
-            = st.executeQuery(query); // Execute query
-        while(rs.next()){
-             int roomNum = rs.getInt("RoomNum");
-            String availability
-             = rs.getString("Availability"); // Retrieve name from db
-            String roomType = rs.getString("Room_Type");
-            
-            System.out.println(roomNum +" "+availability +" "+roomType);
+   public static DefaultTableModel getRoomAvailabilityModel() throws ClassNotFoundException, SQLException {
+            String url = "jdbc:mysql://hotel-reservation.cxhswfveunmf.us-west-1.rds.amazonaws.com:3306/Hotel_Reservation";
+            String username = "admin";
+            String password = "01NoShotFlip$";
+            String query = "select *from Room_Inventory";
 
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(url, username, password);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            DefaultTableModel model = new DefaultTableModel();
+
+            // Add Columns to Model
+            for (int i = 1; i <= columnCount; i++) {
+                model.addColumn(metaData.getColumnName(i));
+            }
+
+            // Add Rows to Model
+            while (rs.next()) {
+                Object[] rowData = new Object[columnCount];
+                for (int i = 1; i <= columnCount; i++) {
+                    rowData[i - 1] = rs.getObject(i);
+                }
+                model.addRow(rowData);
+            }
+
+            st.close();
+            con.close();
+
+            return model;
         }
-        st.close(); // close statement
-        con.close(); // close connection
-    }
     void updateRoomAvailability(int roomNum) throws SQLException, ClassNotFoundException{
 
          String url
@@ -147,30 +162,40 @@ public class Database {
     }
     
     
-    void bookingDetails() throws ClassNotFoundException, SQLException{
-        String url
-            = "jdbc:mysql://hotel-reservation.cxhswfveunmf.us-west-1.rds.amazonaws.com:3306/Hotel_Reservation"; // table details
-        String username = "admin"; // MySQL credentials
+    public static DefaultTableModel bookingDetails() throws ClassNotFoundException, SQLException {
+        String url = "jdbc:mysql://hotel-reservation.cxhswfveunmf.us-west-1.rds.amazonaws.com:3306/Hotel_Reservation";
+        String username = "admin";
         String password = "01NoShotFlip$";
-        String query
-            = "select *from Booking"; // query to be run
-         Class.forName(
-            "com.mysql.cj.jdbc.Driver"); // Driver name
-        Connection con = DriverManager.getConnection(
-            url, username, password); 
+        String query = "select *from Booking";
+    
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection(url, username, password);
         Statement st = con.createStatement();
-        ResultSet rs
-            = st.executeQuery(query); // Execute query
-        while (rs.next()){
-             int roomNum = rs.getInt("RoomNum");
-            String startDate
-             = rs.getString("Start_Date"); // Retrieve name from db
-            String endDate = rs.getString("End_Date");
-            
-            System.out.println(roomNum +" "+startDate +" "+endDate);
+        ResultSet rs = st.executeQuery(query);
+    
+        ResultSetMetaData metaData = rs.getMetaData();
+        int columnCount = metaData.getColumnCount();
+    
+        DefaultTableModel model = new DefaultTableModel();
+    
+        // Add Columns to Model
+        for (int i = 1; i <= columnCount; i++) {
+            model.addColumn(metaData.getColumnName(i));
         }
-        st.close(); // close statement
-        con.close(); // close connection
+    
+        // Add Rows to Model
+        while (rs.next()) {
+            Object[] rowData = new Object[columnCount];
+            for (int i = 1; i <= columnCount; i++) {
+                rowData[i - 1] = rs.getObject(i);
+            }
+            model.addRow(rowData);
+        }
+    
+        st.close();
+        con.close();
+    
+        return model;
     }
     void addBooking (int roomNum , String startDate , String endDate) throws ClassNotFoundException, SQLException{
         String url

@@ -439,7 +439,7 @@ public class GUI {
 
         // Make frame visible
         frame.setVisible(true);
-    }
+    
     /* 
         JFrame adminFrame = new JFrame("Hotel Toad GUI");
         adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -486,15 +486,20 @@ public class GUI {
         });
 
         JFrame adminView = new JFrame("Hotel Toad GUI");
+        JTable customerDetailsJTable = new JTable();
+        JTable roomAvJTable = new JTable();
+        JTable bookingJTable = new JTable();
         adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         adminView.setSize(1280, 720);
-        JPanel adminViewer = new JPanel();
+        JPanel adminViewer = new JPanel(new CardLayout());
         JButton checkCustomerDetails  = new JButton("Check Customer Details");
         JButton roomAvailability  = new JButton("Rooms ");
         JButton bookingDetails  = new JButton("Booking Details");
         JButton goBack2  = new JButton("Go Back");
         adminViewer.setLayout(new BorderLayout());
-
+        adminView.add(new JScrollPane(customerDetailsJTable), BorderLayout.EAST);
+        adminView.add(new JScrollPane(roomAvJTable), BorderLayout.SOUTH);
+        adminView.add(new JScrollPane(bookingJTable), BorderLayout.WEST);
         JPanel buttonPanel3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         checkCustomerDetails.setBounds(10, 0, 200, 30);
         roomAvailability.setBounds(300, 0, 200, 30);
@@ -505,7 +510,7 @@ public class GUI {
         adminViewer.add(buttonPanel3);
         buttonPanel3.add(goBack2);
         adminView.add(adminViewer);
-        JTextArea textArea = new JTextArea();
+        
         
         enter.addActionListener(new ActionListener() {
         
@@ -529,12 +534,14 @@ public class GUI {
         
         public void actionPerformed(ActionEvent e){
                 try {
-                    Database.checkCustomerDetails(textArea);
+                    DefaultTableModel model = Database.getCustomerDetailsModel();
+                
+                    customerDetailsJTable.setModel(model);
                 } catch (ClassNotFoundException | SQLException ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(frame, "An error occurred while fetching customer details.");
                 }
-                adminView.add(new JScrollPane(textArea), java.awt.BorderLayout.CENTER);
+                
                 adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 adminView.setVisible(true);
             }
@@ -544,12 +551,17 @@ public class GUI {
         
         public void actionPerformed(ActionEvent e){
                 try {
-                    Database.roomAvailability(textArea);
+                    DefaultTableModel model = Database.getRoomAvailabilityModel();
+                     // Print model to console to verify
+               
+
+                        // Set Model to JTable
+                    roomAvJTable.setModel(model);
                 } catch (ClassNotFoundException | SQLException ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(frame, "An error occurred while fetching customer details.");
                 }
-                adminView.add(new JScrollPane(textArea), java.awt.BorderLayout.CENTER);
+                
                 adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 adminView.setVisible(true);
             }
@@ -559,12 +571,14 @@ public class GUI {
         
         public void actionPerformed(ActionEvent e){
                 try {
-                    Database.bookingDetails(textArea);
+                    DefaultTableModel model = Database.bookingDetails();
+                
+                    bookingJTable.setModel(model);
                 } catch (ClassNotFoundException | SQLException ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(frame, "An error occurred while fetching customer details.");
                 }
-                adminView.add(new JScrollPane(textArea), java.awt.BorderLayout.CENTER);
+                
                 adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 adminView.setVisible(true);
             }
@@ -579,7 +593,7 @@ public class GUI {
         JButton bookNow = new JButton("Book Now");
         JButton goBack3 = new JButton("Go Back");
         customerPanel.setLayout(new FlowLayout());
-        
+        JTable roomAv2JTable = new JTable();
         JPanel buttonPanel4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JTextField firstName ,lastName, email,numAuldts, numChildren, checkIn ,checkOut, roomType;
         firstName=new JTextField("First Name        ");  
@@ -597,6 +611,7 @@ public class GUI {
         
         roomType=new JTextField("Room Type     ");  
         
+        customerViewFrame.add(new JScrollPane(roomAv2JTable), BorderLayout.SOUTH);
         buttonPanel4.add(bookNow);
         buttonPanel4.add(goBack3);
         customerPanel.add(buttonPanel4);
@@ -612,6 +627,20 @@ public class GUI {
         bookingButton.addActionListener(new ActionListener()  {
         // Code to handle admin actions
         public void actionPerformed(ActionEvent e){
+            try {
+            DefaultTableModel model = Database.getRoomAvailabilityModel();
+
+                // Set Model to JTable
+            roomAv2JTable.setModel(model);
+            } catch (ClassNotFoundException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            } catch (SQLException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+            
+            customerViewFrame.add(customerPanel);
             customerViewFrame.setVisible(false);
             customerViewFrame.setVisible(true);
             
