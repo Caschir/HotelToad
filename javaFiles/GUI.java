@@ -154,7 +154,7 @@ public class GUI {
 
         // Make frame visible
         frame.setVisible(true);
-    }
+    
     /* 
         JFrame adminFrame = new JFrame("Hotel Toad GUI");
         adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -256,7 +256,7 @@ public class GUI {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(frame, "An error occurred while fetching customer details.");
                 }
-                adminView.add(new JScrollPane(textArea), java.awt.BorderLayout.CENTER);
+                
                 adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 adminView.setVisible(true);
             }
@@ -276,7 +276,7 @@ public class GUI {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(frame, "An error occurred while fetching customer details.");
                 }
-                adminView.add(new JScrollPane(textArea), java.awt.BorderLayout.CENTER);
+                
                 adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 adminView.setVisible(true);
             }
@@ -293,7 +293,7 @@ public class GUI {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(frame, "An error occurred while fetching customer details.");
                 }
-                adminView.add(new JScrollPane(textArea), java.awt.BorderLayout.CENTER);
+                
                 adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 adminView.setVisible(true);
             }
