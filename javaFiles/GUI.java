@@ -1,5 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
 import java.awt.*;
 import java.awt.event.*;
 
