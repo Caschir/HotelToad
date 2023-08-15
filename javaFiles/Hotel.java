@@ -20,7 +20,7 @@ public class Hotel {
      public static Object reserveRoom(Guest guest, String roomType, String checkIn, String checkOut, String email) throws ClassNotFoundException, SQLException{
         for (int i = 0; i < rooms.length; i++){
             if (rooms[i].getRoomType().equalsIgnoreCase(roomType) && rooms[i].isAvailable()){
-                rooms[i].availability = false;
+                
                 
                 int roomNumber =rooms[i].getRoomNumber();
                 
@@ -36,13 +36,9 @@ public class Hotel {
         for (int i = 0; i < rooms.length; i++){
             if (rooms[i].getRoomType().equalsIgnoreCase(roomType) && rooms[i].isAvailable()){
                 rooms[i].availability = false;
-                System.out.println("\nRoom Reservation Successful!");
-                System.out.println("Guest: " + guest.getFirstName() + " " + guest.getLastName());
-                System.out.println("Room Type: " + roomType);
-                System.out.println("Check-in: " + checkIn);
-                System.out.println("Check-out: " + checkOut);
-                roomNumber =rooms[i].getRoomNumber();
-                System.out.println("Room Number: "+ roomNumber);
+                
+                int roomNumber =rooms[i].getRoomNumber();
+               
                 //Calls addtoCustomerDetails from DataBase class to store the infomation
                 Database.addtoCustomerDetails(guest.getFirstName() , guest.getLastName(), email, roomNumber);
                 //Calls addBooking from DataBase class to store the infomation
@@ -52,7 +48,7 @@ public class Hotel {
                 return;
             }
         }
-        System.out.println("\nSorry, room of type("+roomType+") is not available");
+        
     }
 
     // Hotel method for canceling room for Customer
@@ -60,7 +56,7 @@ public class Hotel {
         for (int i = 0; i < rooms.length; i++){
             if (rooms[i].getRoomNumber() == roomNumber) {
                 rooms[i].availability = true;
-                System.out.println("Room Cancellation Successful!");
+               
                 //Calls deleteCustomerDetails from DataBase class to delete in the Database
                 Database.deleteCustomerDetails(roomNumber);
                 //Calls nowAvailabe from DataBase class to Updates in the Database
@@ -70,7 +66,7 @@ public class Hotel {
                 return;
             }
         }
-        System.out.println("Room not found.");
+       
     }
 
 }
