@@ -450,8 +450,8 @@ public class GUI {
         //Create a new panel
     
         JPanel adminPanel = new JPanel();
-        JButton enter = new JButton("Enter");
-        JButton goBack = new JButton("Go Back");
+        JButton enter = buttonStyling("Enter", Color.BLUE);
+        JButton goBack = buttonStyling("Go Back", Color.black);
         adminPanel.setLayout(new BorderLayout());
         
         JPanel buttonPanel2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -494,10 +494,10 @@ public class GUI {
         adminView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         adminView.setSize(1280, 720);
         JPanel adminViewer = new JPanel(new CardLayout());
-        JButton checkCustomerDetails  = new JButton("Check Customer Details");
-        JButton roomAvailability  = new JButton("Rooms ");
-        JButton bookingDetails  = new JButton("Booking Details");
-        JButton goBack2  = new JButton("Go Back");
+        JButton checkCustomerDetails  = buttonStyling("Check Customer Details", Color.RED);
+        JButton roomAvailability  = buttonStyling("Rooms", Color.BLUE);
+        JButton bookingDetails  = buttonStyling("Booking Details", Color.ORANGE);
+        JButton goBack2  = buttonStyling("Go Back", Color.BLACK);
         adminViewer.setLayout(new BorderLayout());
         adminView.add(new JScrollPane(customerDetailsJTable), BorderLayout.EAST);
         adminView.add(new JScrollPane(roomAvJTable), BorderLayout.SOUTH);
@@ -592,8 +592,8 @@ public class GUI {
         customerViewFrame.setSize(1500, 1000);
 
         JPanel customerPanel = new JPanel();
-        JButton bookNow = new JButton("Book Now");
-        JButton goBack3 = new JButton("Go Back");
+        JButton bookNow = buttonStyling("Book Now", Color.RED); 
+        JButton goBack3 = buttonStyling("Go Back", Color.BLUE);
         customerPanel.setLayout(new FlowLayout());
         JTable roomAv2JTable = new JTable();
         JPanel buttonPanel4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
